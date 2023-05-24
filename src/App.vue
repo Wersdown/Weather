@@ -219,7 +219,7 @@ const renew = async () => {
     }
 
 
-    //data = ref((await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${City.value}&appid=7668ecf139873b2a00be2b02f0b7d8e1&lang=tr&units=metric`)).data)
+    data = ref((await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${City.value}&appid=7668ecf139873b2a00be2b02f0b7d8e1&lang=tr&units=metric`)).data)
 
     CityName.value = City.value;
 
