@@ -7,12 +7,15 @@ function convertBool(val: string) {
 export default createStore({
     state: {
         story: false as boolean,
+        cities: [] as string[]
     },
     mutations: {
         safeLoadValues(state) {
             try {
                 let story = localStorage.getItem("story");
+                let cities = localStorage.getItem("cities");
                 state.story = story ? convertBool(story) : state.story;
+                state.cities = cities ? JSON.parse(cities) : [];
             }
             catch (e) {
                 if (e) {
@@ -23,6 +26,7 @@ export default createStore({
         },
         saveValues(state) {
             localStorage.setItem("story", state.story + '');
+            localStorage.setItem("cities", JSON.stringify(state.cities));
         }
     }
 })
