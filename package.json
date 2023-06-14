@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/main.ts",
   "scripts": {
-    "serve": "vite --open",
+    "serve": "vite --open --host",
     "build": "vite build"
   },
   "keywords": [],

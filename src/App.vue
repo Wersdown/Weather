@@ -277,7 +277,7 @@ const renew = async () => {
         for (let i = 0; i < counter; i++) {
             hrElement = document.createElement("HR");
 
-            hrElement.style.left = Math.floor(Math.random() * window.innerWidth) + "px";
+            hrElement.style.left = Math.floor(Math.random() * BackgroundBase.value!.clientWidth) + "px";
             hrElement.style.animationDuration = 0.2 + Math.random() * 1.9 + "s";
             hrElement.style.animationDelay = Math.random() * 5 + "s";
 
@@ -360,6 +360,9 @@ body {
     transition: .2s ease;
     transition-property: background-position-y;
 
+    overflow: hidden;
+    position: relative;
+
     &.night {
         background-position-y: -50vh;
     }
@@ -367,9 +370,9 @@ body {
 
 .background {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
+    width: 140vw;
+    height: -webkit-fill-available;
+    left: -20vw;
     transition: .2s ease;
     opacity: 0;
 
@@ -436,6 +439,9 @@ body {
     width: 100%;
     display: flex;
     margin: 0 auto;
+
+    overflow: hidden;
+    position: relative;
 }
 
 section.classic {
@@ -751,7 +757,6 @@ section.classic {
             overflow: hidden;
             display: inline-flex;
             vertical-align: middle;
-            height: 6em;
 
             .display {
                 display: flex;
@@ -840,7 +845,7 @@ section.classic {
     }
 
     to {
-        transform: rotate(105deg) translateX(calc(100vh + 40px));
+        transform: rotate(105deg) translateX(calc(100vh + 100px));
     }
 }
 
