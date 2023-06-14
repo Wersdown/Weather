@@ -435,7 +435,6 @@ body {
 
 
 .wrapper {
-    max-width: 90%;
     width: 100%;
     display: flex;
     margin: 0 auto;
